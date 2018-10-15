@@ -42,7 +42,7 @@ public class alipay extends CordovaPlugin {
         cordova.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {
-                EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+                com.alipay.sdk.app.EnvUtils.setEnv(com.alipay.sdk.app.EnvUtils.EnvEnum.SANDBOX);
                 PayTask alipay = new PayTask(cordova.getActivity());
                 Map<String, String> result = alipay.payV2(payInfo, true);
                 Log.i("msp", result.toString());
